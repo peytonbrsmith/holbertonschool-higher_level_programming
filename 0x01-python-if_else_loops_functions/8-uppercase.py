@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 def uppercase(str):
     for i in str:
-        number = ord(i)
-        if number > 96 and number < 123:
-            print("{:c}".format(number - 32), end='')
+        lower = ord(i)
+        if lower > 96 and lower < 123:
+            check = True
         else:
-            print(i, end='')
+            check = False
+        print("{:c}".format((lower - 32) if check else lower), end='')
     print("")
