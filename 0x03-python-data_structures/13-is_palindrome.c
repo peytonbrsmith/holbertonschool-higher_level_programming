@@ -7,10 +7,14 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *cmpcpy = *head;
-	listint_t *cpy = *head;
+	listint_t *cmpcpy;
+	listint_t *cpy;
 	unsigned int len, i;
 
+	if (head == NULL)
+		return (1);
+	cpy = *head;
+	cmpcpy = *head;
 	for (len = 0; cmpcpy->next != NULL; len++)
 		cmpcpy = cmpcpy->next;
 	while (len > 0)
