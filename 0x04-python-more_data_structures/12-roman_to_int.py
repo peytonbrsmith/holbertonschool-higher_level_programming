@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if roman_string:
-        roman_val = 0
+    roman_val = 0
+    if roman_string is not None:
         for c in roman_string:
             if c is "X":
                 roman_val += 10
@@ -17,5 +17,4 @@ def roman_to_int(roman_string):
                 roman_val += 500
             elif c is "M":
                 roman_val += 1000
-        return (roman_val)
-    return (0)
+    return (roman_val)
