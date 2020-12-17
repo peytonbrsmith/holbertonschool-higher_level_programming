@@ -2,4 +2,14 @@
 def best_score(a_dictionary):
     if a_dictionary is None:
         return (None)
-    return (sorted(a_dictionary)[len(a_dictionary) - 1])
+    first = True
+    best = None
+    for key in a_dictionary:
+        if first:
+            prev = a_dictionary[key]
+            best = key
+            first = False
+        if a_dictionary[key] > prev:
+            prev = a_dictionary[key]
+            best = key
+    return (best)
