@@ -4,7 +4,8 @@ def roman_to_int(roman_string):
     if roman_string is None:
         return (roman_val)
     order = ['M', 'D', 'C', 'L', 'X', 'V', 'I']
-    numerals = dict([('X', 10), ('V', 5), ('I', 1), ('L', 50), ('C', 100), ('D', 500), ('M', 1000)])
+    numerals = dict([('X', 10), ('V', 5), ('I', 1),
+                    ('L', 50), ('C', 100), ('D', 500), ('M', 1000)])
     prevnum = 6
     for i in range(len(roman_string) - 1, -1, -1):
         for j in range(0, len(order)):
