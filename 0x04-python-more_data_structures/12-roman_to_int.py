@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
     roman_val = 0
-    if roman_string is None:
+    if roman_string is None or not isinstance(roman_string, str):
         return (roman_val)
     order = ['M', 'D', 'C', 'L', 'X', 'V', 'I']
     numerals = dict([('X', 10), ('V', 5), ('I', 1),
@@ -12,7 +12,6 @@ def roman_to_int(roman_string):
             return (0)
         for j in range(0, len(order)):
             if roman_string[i] == order[j]:
-                # print("J is {} and Prevnum is {}".format(j, prevnum))
                 if j <= prevnum:
                     roman_val += numerals[roman_string[i]]
                 else:
