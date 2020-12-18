@@ -1,20 +1,18 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
     roman_val = 0
-    if roman_string is not None:
-        for c in roman_string:
-            if c is "X":
-                roman_val += 10
-            elif c is "V":
-                roman_val += 5
-            elif c is "I":
-                roman_val += 1
-            elif c is "L":
-                roman_val += 50
-            elif c is "C":
-                roman_val += 100
-            elif c is "D":
-                roman_val += 500
-            elif c is "M":
-                roman_val += 1000
+    if roman_string is None:
+        return (roman_val)
+    order = ['M', 'D', 'C', 'L', 'X', 'V', 'I']
+    numerals = dict([('X', 10), ('V', 5), ('I', 1), ('L', 50), ('C', 100), ('D', 500), ('M', 1000)])
+    prevnum = 6
+    for i in range(len(roman_string) - 1, -1, -1):
+        for j in range(0, len(order)):
+            if roman_string[i] == order[j]:
+                # print("J is {} and Prevnum is {}".format(j, prevnum))
+                if j <= prevnum:
+                    roman_val += numerals[roman_string[i]]
+                else:
+                    roman_val -= numerals[roman_string[i]]
+                prevnum = j
     return (roman_val)
