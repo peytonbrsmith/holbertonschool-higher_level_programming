@@ -8,6 +8,8 @@ def roman_to_int(roman_string):
                     ('L', 50), ('C', 100), ('D', 500), ('M', 1000)])
     prevnum = 6
     for i in range(len(roman_string) - 1, -1, -1):
+        if order.count(roman_string[i]) == 0:
+            return (0)
         for j in range(0, len(order)):
             if roman_string[i] == order[j]:
                 # print("J is {} and Prevnum is {}".format(j, prevnum))
