@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def raise_exception_msg(message=""):
     try:
-        raise TypeError
-    except TypeError:
+        raise NameError
+    except NameError:
         print(message)
