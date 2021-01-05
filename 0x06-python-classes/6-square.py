@@ -27,6 +27,8 @@ class Square:
 
     def my_print(self):
         """Prints the square instance's size in #s"""
+        for i in range(self.position[1]):
+            print()
         for i in range(self.__size):
             for i in range(self.position[0]):
                 print(" ", end='')
