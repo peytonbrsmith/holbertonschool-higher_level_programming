@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This module creates a square instance with a size and validates it is an int >= 0"""
+"""This module creates a square instance with a
+size and validates it is an int >= 0"""
 
 
 class Square:

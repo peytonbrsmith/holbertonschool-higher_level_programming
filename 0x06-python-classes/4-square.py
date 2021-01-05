@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This module creates a square instance with a size and allows it to be changed with getters and setters"""
+"""This module creates a square instance with a size
+and allows it to be changed with getters and setters"""
 
 
 class Square:
