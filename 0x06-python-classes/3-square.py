@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""This module calculates the area of square given it's size"""
+
+
 class Square:
     """
     Square Class that holds size
