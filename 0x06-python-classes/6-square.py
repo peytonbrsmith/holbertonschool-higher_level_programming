@@ -27,6 +27,9 @@ class Square:
 
     def my_print(self):
         """Prints the square instance's size in #s"""
+        if self.__size is 0:
+            print()
+            return
         for i in range(self.position[1]):
             print()
         for i in range(self.__size):
@@ -34,8 +37,6 @@ class Square:
                 print(" ", end='')
             for i in range(self.__size):
                 print("#", end='')
-            print()
-        if self.__size is 0:
             print()
 
     @property
