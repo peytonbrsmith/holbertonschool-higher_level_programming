@@ -36,6 +36,12 @@ Using it with wrong types, should raise errors:
     TypeError: b must be an integer
 
 ::
+    >>> add_integer('c', 2)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+Using it without input
+::
     >>> add_integer(None)
     Traceback (most recent call last):
     TypeError: a must be an integer
