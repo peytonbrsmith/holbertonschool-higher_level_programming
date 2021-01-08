@@ -1,0 +1,26 @@
+The ``5-text_indentation`` module
+============================
+
+``text_indentation`` - prints a square of #s of size size
+---------------------
+
+This is the test file for 5-text_indentation.py.  First import
+``text_indentation`` from the ``5-text_indentation`` module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Testing it with short sentence containing '?' , '.' , ':':
+::
+    >>> text_indentation("This is a test. It should work: Hopefully?")
+    This is a test.
+    <BLANKLINE>
+    It should work:
+    <BLANKLINE>
+    Hopefully?
+    <BLANKLINE>
+
+Testing it with non-string:
+::
+    >>> text_indentation(4)
+    Traceback (most recent call last):
+    TypeError: text must be a string
