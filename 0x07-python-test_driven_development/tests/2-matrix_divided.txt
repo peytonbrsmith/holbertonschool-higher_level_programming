@@ -1,7 +1,7 @@
 The ``2-matrix_divided`` module
 ============================
 
-``matrix_divided`` -
+``matrix_divided`` - divides matrices of ints/floats by ints/floats
 ---------------------
 
 This is the test file for 2-matrix_divided.py.  First import

@@ -1,0 +1,33 @@
+The ``3-say_my_name`` module
+============================
+
+``say_my_name`` - says the given name
+---------------------
+
+This is the test file for 3-say_my_name.py.  First import
+``say_my_name`` from the ``3-say_my_name`` module:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Testing it with correct strings for both args:
+::
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+Testing it with correct string for first arg:
+::
+    >>> say_my_name("John", 4)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+Testing it with correct string for second arg:
+::
+    >>> say_my_name(4, "Smith")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Testing it with empty arguments:
+::
+    >>> say_my_name("", "Smith")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
