@@ -1,0 +1,64 @@
+The ``2-matrix_divided`` module
+============================
+
+``matrix_divided`` -
+---------------------
+
+This is the test file for 2-matrix_divided.py.  First import
+``matrix_divided`` from the ``2-matrix_divided`` module:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Testing it with single digit positive integers:
+::
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Testing it with non-list of list matrix:
+::
+    >>> matrix = 4
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Testing it with a list of lists of non-ints/floats:
+::
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, "Fork"]
+    ... ]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Testing it with a list of non-lists:
+::
+    >>> matrix = [1, 2, "Fork"]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Testing it with row of incorrect size:
+::
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6, 4],
+    ...     [1, 2, 3]
+    ... ]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+Testing it with row of incorrect size:
+::
+    >>> matrix = []
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+

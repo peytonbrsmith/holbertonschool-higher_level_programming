@@ -30,11 +30,13 @@ Using it with float variables, that should be converted to int:
     98
 
 Using it with wrong types, should raise errors:
+With String
 ::
     >>> add_integer(4, "School")
     Traceback (most recent call last):
     TypeError: b must be an integer
 
+With char
 ::
     >>> add_integer('c', 2)
     Traceback (most recent call last):
