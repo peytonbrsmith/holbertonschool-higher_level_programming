@@ -62,9 +62,7 @@ Write a class Rectangle that defines a rectangle by: (based on 2-rectangle.py)
 ## 4. Eval is magic
 ***
 Write a class Rectangle that defines a rectangle by: (based on 3-rectangle.py)
-  - Write a class Rectangle that defines a rectangle by: (based on 3-rectangle.py)
-
-  Private instance attribute: width:
+  - Private instance attribute: width:
   property def width(self): to retrieve it
   property setter def width(self, value): to set it:
   width must be an integer, otherwise raise a TypeError exception with the message width must be an integer
