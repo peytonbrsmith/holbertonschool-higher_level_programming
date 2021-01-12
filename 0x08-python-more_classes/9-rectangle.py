@@ -31,8 +31,8 @@ class Rectangle:
             new_width - the new width
             new_height - the new height
         """
-        self.height = new_height
         self.width = new_width
+        self.height = new_height
         Rectangle.number_of_instances += 1
 
     @property
