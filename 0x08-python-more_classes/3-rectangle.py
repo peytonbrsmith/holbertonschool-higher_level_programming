@@ -80,12 +80,12 @@ class Rectangle:
 
     def __str__(self):
         """creates the Rectangle's string used by the print() function"""
-        str = ""
-        if self.perimeter == 0:
-            return str
+        string = ""
+        if self.perimeter() == 0:
+            return string
         else:
             for i in range(self.height):
                 for i in range(self.width):
-                    str += "#"
-                str += "\n"
-        return str[:-1]
+                    string += "#"
+                string += "\n"
+        return string[:-1]
