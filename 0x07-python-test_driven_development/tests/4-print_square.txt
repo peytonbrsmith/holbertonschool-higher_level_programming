@@ -39,3 +39,14 @@ Testing it with none for int for argument:
     >>> print_square(None)
     Traceback (most recent call last):
     TypeError: size must be an integer
+
+Testing it with 0 for argument:
+::
+    >>> print_square(0)
+    <BLANKLINE>
+
+Testing it with 0 for argument:
+::
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
