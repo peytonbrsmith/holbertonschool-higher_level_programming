@@ -28,5 +28,15 @@ class TestMaxInteger(unittest.TestCase):
         list = []
         self.assertEqual(max_integer(list), None)
 
+    def test_max_beginning(self):
+        # Test list of ordered single digit positive integers
+        list = [5, 1, 2, 3, 4]
+        self.assertEqual(max_integer(list), 5)
+
+    def test_one_list(self):
+        # Test list of ordered single digit positive integers
+        list = [5]
+        self.assertEqual(max_integer(list), 5)
+
 if __name__ == '__main__':
     unittest.main()
