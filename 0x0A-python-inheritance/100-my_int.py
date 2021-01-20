@@ -3,6 +3,7 @@
 
 
 class MyInt(int):
+    """A rebellious cousin of the integer class"""
     def __eq__(a, b):
         """REBELIOUS =="""
         if a < b or a > b:
