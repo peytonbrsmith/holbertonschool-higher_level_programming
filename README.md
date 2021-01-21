@@ -1,10 +1,10 @@
-## Welcome to, holbertonschool-higher_level_programming <p align="left"> <a href="https://www.python.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
+## Welcome to, holbertonschool-higher_level_programming 
 
 ------
 
 This repository contains all of my Holberton project contents related to Higher Level Programming.
 
-
+<p align="left"> <a href="https://www.python.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
 
 Project Requirements vary project by project, but a general set is as follows:
 
