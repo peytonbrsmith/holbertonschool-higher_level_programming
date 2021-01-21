@@ -3,21 +3,26 @@
 Create a function def pascal_triangle(n): that returns a list of
 lists of integers representing the Pascal’s triangle of n:
 """
-from math import factorial
-
-
-def bc(n, k):
-    """calculates binomial coefficients"""
-    return int((factorial(n)) / ((factorial(k)) * factorial(n - k)))
 
 
 def pascal_triangle(n):
-    """creates the triangle"""
-    return_list = []
-    new_list = []
+    """returns list representing Pascal's triangle"""
+    list = []
+    if n <= 0:
+        return list
+    last = [1]
     for row in range(n):
-        for column in range(row + 1):
-                new_list.append(bc(row, column))
-        return_list.append(new_list)
         new_list = []
-    return (return_list)
+        if row == 0:
+            new_list = [1]
+        else:
+            for column in range(row + 1):
+                if column == 0:
+                    new_list.append(0 + last[column])
+                elif column == (row):
+                    new_list.append(last[column - 1] + 0)
+                else:
+                    new_list.append(last[column - 1] + last[column])
+        last = new_list
+        list.append(new_list)
+    return list
