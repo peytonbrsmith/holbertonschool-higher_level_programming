@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Write a class Student that defines a student by:"""
-import json
-class_to_json = __import__('8-class_to_json').class_to_json
 
 
 class Student():
