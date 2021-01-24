@@ -68,16 +68,31 @@ class Rectangle(Base):
                 i += 1
         elif len(kwargs) != 0:
             for arg in kwargs.keys():
-                if arg is "id":
+                if arg == "id":
+                    print("{} is {}".format(arg, kwargs.get(arg)))
                     self.id = kwargs.get(arg)
-                if arg is "width":
+                if arg == "width":
+                    print("{} is {}".format(arg, kwargs.get(arg)))
                     self.width = kwargs.get(arg)
-                if arg is "height":
+                if arg == "height":
+                    print("{} is {}".format(arg, kwargs.get(arg)))
                     self.height = kwargs.get(arg)
-                if arg is "x":
+                if arg == "x":
+                    print("{} is {}".format(arg, kwargs.get(arg)))
                     self.x = kwargs.get(arg)
-                if arg is "y":
+                if arg == "y":
+                    print("{} is {}".format(arg, kwargs.get(arg)))
                     self.y = kwargs.get(arg)
+
+    def to_dictionary(self):
+        rec_dict = {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
+        return rec_dict
 
     @property
     def width(self):

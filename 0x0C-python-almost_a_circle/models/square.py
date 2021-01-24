@@ -18,6 +18,40 @@ class Square(Rectangle):
             .format(self.id, self.x, self.y, self.width)
         return(string)
 
+    def update(self, *args, **kwargs):
+        """Updates the values of the given object"""
+        if len(args) != 0:
+            i = 1
+            for arg in args:
+                if i == 1:
+                    self.id = arg
+                elif i == 2:
+                    self.size = arg
+                elif i == 3:
+                    self.x = arg
+                elif i == 4:
+                    self.y = arg
+                i += 1
+        elif len(kwargs) != 0:
+            for arg in kwargs.keys():
+                if arg == "id":
+                    self.id = kwargs.get(arg)
+                if arg == "size":
+                    self.size = kwargs.get(arg)
+                if arg == "x":
+                    self.x = kwargs.get(arg)
+                if arg == "y":
+                    self.y = kwargs.get(arg)
+
+    def to_dictionary(self):
+        sqr_dict = {
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
+        }
+        return sqr_dict
+
     @property
     def size(self):
         """size property"""
