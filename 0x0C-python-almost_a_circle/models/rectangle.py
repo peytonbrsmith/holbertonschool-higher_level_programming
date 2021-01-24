@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """Write the class Rectangle that inherits from Base:"""
 
+
 from models.base import Base
+
 
 class Rectangle(Base):
     """
@@ -26,6 +28,56 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
+
+    def area(self):
+        """Returns the area of the rectangle"""
+        return self.width * self.height
+
+    def display(self):
+        """Displays the rectangle in stdout with #s"""
+        for rowspc in range(self.y):
+                print()
+        for row in range(self.height):
+            for colspc in range(self.x):
+                print(" ", end="")
+            for col in range(self.width):
+                print("#", end="")
+            print()
+
+    def __str__(self):
+        """Returns string representation of rec object"""
+        string = "[Rectangle] ({}) {}/{} - {}/{}"\
+            .format(self.id, self.x, self.y, self.width, self.height)
+        return(string)
+
+    def update(self, *args, **kwargs):
+        """Updates the values of the given object"""
+        if len(args) != 0:
+            i = 1
+            for arg in args:
+                if i == 1:
+                    self.id = arg
+                elif i == 2:
+                    self.width = arg
+                elif i == 3:
+                    self.height = arg
+                elif i == 4:
+                    self.x = arg
+                elif i == 5:
+                    self.y = arg
+                i += 1
+        elif len(kwargs) != 0:
+            for arg in kwargs.keys():
+                if arg is "id":
+                    self.id = kwargs.get(arg)
+                if arg is "width":
+                    self.width = kwargs.get(arg)
+                if arg is "height":
+                    self.height = kwargs.get(arg)
+                if arg is "x":
+                    self.x = kwargs.get(arg)
+                if arg is "y":
+                    self.y = kwargs.get(arg)
 
     @property
     def width(self):
@@ -52,6 +104,10 @@ class Rectangle(Base):
         """
         sets width
         """
+        if type(width) is not int:
+            raise TypeError("width must be an integer")
+        if width <= 0:
+            raise ValueError("width must be > 0")
         self.__width = width
 
     @height.setter
@@ -59,6 +115,10 @@ class Rectangle(Base):
         """
         sets height
         """
+        if type(height) is not int:
+            raise TypeError("height must be an integer")
+        if height <= 0:
+            raise ValueError("height must be > 0")
         self.__height = height
 
     @x.setter
@@ -66,6 +126,10 @@ class Rectangle(Base):
         """
         sets x
         """
+        if type(x) is not int:
+            raise TypeError("x must be an integer")
+        if x < 0:
+            raise ValueError("x must be >= 0")
         self.__x = x
 
     @y.setter
@@ -73,4 +137,8 @@ class Rectangle(Base):
         """
         sets y
         """
+        if type(y) is not int:
+            raise TypeError("y must be an integer")
+        if y < 0:
+            raise ValueError("y must be >= 0")
         self.__y = y

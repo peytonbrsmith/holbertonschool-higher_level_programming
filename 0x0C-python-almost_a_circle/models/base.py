@@ -16,8 +16,10 @@ class Base():
 
     def __init__(self, id=None):
         """Initializes Base instance with given ID or nb_objects"""
-        if id is not None:
-            self.id = id
-        else:
+        if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+        elif type(id) is not int:
+            raise TypeError("id must be an integer")
+        else:
+            self.id = id
