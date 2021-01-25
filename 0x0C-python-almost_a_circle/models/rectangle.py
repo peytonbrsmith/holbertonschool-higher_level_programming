@@ -85,6 +85,7 @@ class Rectangle(Base):
                     self.y = kwargs.get(arg)
 
     def to_dictionary(self):
+        """returns a dictionary for itself"""
         rec_dict = {
             "id": self.id,
             "width": self.width,
