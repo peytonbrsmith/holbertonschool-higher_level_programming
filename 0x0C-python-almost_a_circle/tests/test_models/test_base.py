@@ -13,62 +13,52 @@ class TestBaseInit(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-        b1 = Base()
-        b2 = Base()
-        b3 = Base(12)
+        self.b1 = Base()
+        self.b2 = Base()
+        self.b3 = Base(12)
 
     @classmethod
     def tearDownClass(self):
-        del b1
-        del b2
-        del b3
+        del self.b1
+        del self.b2
+        del self.b3
 
     def test_nogivenarg(self):
         # Test ungiven ID, should increment nb_objects and use as ID
-        self.assertEqual(b1.id, 1)
+        self.assertEqual(self.b1.id, 1)
 
-#     def test_secondnongivenarg(self):
-#         # Test 2nd ungiven ID, should increment nb_objects and use as ID
-#         self.assertEqual(TestBaseInit.b2.id, 2)
-#         self.assertEqual(TestBaseInit.b1.id, 1)
+    def test_secondnongivenarg(self):
+        # Test 2nd ungiven ID, should increment nb_objects and use as ID
+        self.assertEqual(self.b2.id, 2)
+        self.assertEqual(self.b1.id, 1)
 
-#     def test_givenarg(self):
-#         # Test given ID, shouldn't increment nb_objects or use it as ID
-#         self.assertEqual(TestBaseInit.b3.id, 12)
-#         self.assertEqual(TestBaseInit.b2.id, 2)
-#         self.assertEqual(TestBaseInit.b1.id, 1)
-
-# class TBtojsonstring(unittest.TestCase):
-#     """Test suite for Base() classmethod to_json_string"""
-
-#     @classmethod
-#     def setUpClass(self):
-#         r1 = Rectangle(10, 7, 2, 8)
-#         dictionary = r1.to_dictionary()
-#         json_dictionary = Base.to_json_string([dictionary])
-
-#     @classmethod
-#     def tearDownClass(self):
-#         del self.r1
-#         del self.dictionary
-#         del self.json_dictionary
-
-#     def test_nogivenarg(self):
-#         # Test ungiven ID, should increment nb_objects and use as ID
-#         self.assertEqual(TBtojsonstring.r1.id, 1)
-
-#     # def test_secondnongivenarg(self):
-#     #     # Test 2nd ungiven ID, should increment nb_objects and use as ID
-#     #     self.assertEqual(TBtojsonstring.b2.id, 2)
-#     #     self.assertEqual(TBtojsonstring.b1.id, 1)
-
-#     # def test_givenarg(self):
-#     #     # Test given ID, shouldn't increment nb_objects or use it as ID
-#     #     self.assertEqual(TBtojsonstring.b3.id, 12)
-#     #     self.assertEqual(TBtojsonstring.b2.id, 2)
-#     #     self.assertEqual(TBtojsonstring.b1.id, 1)
+    def test_givenarg(self):
+        # Test given ID, shouldn't increment nb_objects or use it as ID
+        self.assertEqual(self.b3.id, 12)
+        self.assertEqual(self.b2.id, 2)
+        self.assertEqual(self.b1.id, 1)
 
 
+class TestJsonStr(unittest.TestCase):
+    """Test suite for Base() classmethod to_json_string"""
+
+    @classmethod
+    def setUpClass(self):
+        self.r1 = Rectangle(10, 7, 2, 8, 1)
+        self.dictionary = self.r1.to_dictionary()
+        self.json_dictionary = Base.to_json_string([self.dictionary])
+        print(type(self.json_dictionary))
+        print(self.json_dictionary)
+
+    @classmethod
+    def tearDownClass(self):
+        del self.r1
+        del self.dictionary
+        del self.json_dictionary
+
+    def test_correctusage(self):
+        # Test ungiven ID, should increment nb_objects and use as ID
+        self.assertIsInstance(self.json_dictionary, str)
 
 
 if __name__ == '__main__':
