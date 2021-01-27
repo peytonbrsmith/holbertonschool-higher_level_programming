@@ -60,7 +60,7 @@ class Base():
         if cls.__name__ is "Rectangle":
             dummy = cls(1, 2, 0, 0, None)
         elif cls.__name__ is "Square":
-            dummy = cls(1, 2, 0, 0)
+            dummy = cls(1, 0, 0, None)
         cls.update(dummy, **dictionary)
         return dummy
 
