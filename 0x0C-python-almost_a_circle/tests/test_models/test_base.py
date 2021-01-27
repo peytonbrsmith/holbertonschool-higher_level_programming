@@ -42,23 +42,22 @@ class TestBaseInit(unittest.TestCase):
 class TestJsonStr(unittest.TestCase):
     """Test suite for Base() classmethod to_json_string"""
 
-    @classmethod
-    def setUpClass(self):
-        self.r1 = Rectangle(10, 7, 2, 8, 1)
-        self.dictionary = self.r1.to_dictionary()
-        self.json_dictionary = Base.to_json_string([self.dictionary])
-        print(type(self.json_dictionary))
-        print(self.json_dictionary)
-
-    @classmethod
-    def tearDownClass(self):
-        del self.r1
-        del self.dictionary
-        del self.json_dictionary
-
-    def test_correctusage(self):
+    def test_withid12str(self):
         # Test ungiven ID, should increment nb_objects and use as ID
+        self.json_dictionary = Base.to_json_string([{'id': 12}])
         self.assertIsInstance(self.json_dictionary, str)
+
+    def test_withnone(self):
+        # Test ungiven ID, should increment nb_objects and use as ID
+        self.assertEqual(Base.from_json_string(None), [])
+
+    def test_withemptyliststring(self):
+        # Test ungiven ID, should increment nb_objects and use as ID
+        self.assertEqual(Base.from_json_string("[]"), [])
+
+    def test_withidstring89(self):
+        # Test ungiven ID, should increment nb_objects and use as ID
+        self.assertEqual(Base.from_json_string('[{ "id": 89 }]'), [{'id': 89}])
 
 
 if __name__ == '__main__':
