@@ -71,7 +71,7 @@ class Base():
         inst_list = []
         filename = "{}.json".format(cls.__name__)
         with open(filename, mode="r", encoding="utf-8") as myFile:
-            json_string = (json.loads(myFile.read()))
+            json_string = (from_json_string(myFile.read()))
             for instance in json_string:
                 inst_list.append(cls.create(**instance))
             return(inst_list)
