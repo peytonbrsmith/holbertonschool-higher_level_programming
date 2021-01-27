@@ -70,8 +70,14 @@ class Base():
         """returns a list of instances:"""
         inst_list = []
         filename = "{}.json".format(cls.__name__)
-        with open(filename, mode="r", encoding="utf-8") as myFile:
-            json_string = (cls.from_json_string(myFile.read()))
-            for instance in json_string:
-                inst_list.append(cls.create(**instance))
-            return(inst_list)
+        try:
+            with open(filename, mode="r", encoding="utf-8") as myFile:
+                contents = myFile.read()
+                if contents == "[]":
+                    return(inst_list)
+                json_string = (cls.from_json_string(contents))
+                for instance in json_string:
+                    inst_list.append(cls.create(**instance))
+                return(inst_list)
+        except FileNotFoundError:
+            return (inst_list)
