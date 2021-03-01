@@ -1,0 +1,2 @@
+-- LIST ROWS FROM TABLE
+SELECT * FROM first_table;
