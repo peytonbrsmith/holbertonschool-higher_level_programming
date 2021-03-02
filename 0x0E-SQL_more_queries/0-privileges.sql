@@ -1,3 +1,5 @@
 -- show mysql user privileges
-SHOW GRANTS FOR 'user_0d_1'@'localhost';
-SHOW GRANTS FOR 'user_0d_2'@'localhost';
+-- for two users
+SHOW GRANTS IF EXISTS FOR 'user_0d_1'@'localhost';
+SHOW GRANTS IF EXISTS FOR 'user_0d_2'@'localhost';
+
