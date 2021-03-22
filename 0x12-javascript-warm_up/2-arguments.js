@@ -9,9 +9,9 @@ process.argv.forEach((val, index) => {
 });
 
 if (x === 1) {
-    console.log('Argument found');
+  console.log('Argument found');
 } else if (x > 1) {
-    console.log('Arguments found');
+  console.log('Arguments found');
 } else {
   console.log('No argument');
 }
