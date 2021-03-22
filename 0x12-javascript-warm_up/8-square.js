@@ -8,7 +8,7 @@
     while (x > 0) {
       let row = '';
       for (let i = 0; i < y; i++) {
-        row = row.concat('#');
+        row = row.concat('X');
       }
       console.log(row);
       x = x - 1;
