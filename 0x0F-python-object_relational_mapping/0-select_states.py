@@ -12,7 +12,7 @@ if __name__ == "__main__":
     DATABASE = sys.argv[3]
 
     db = MySQLdb.connect(
-        host="127.0.0.1",
+        host="localhost",
         user=USER,
         passwd=PASS,
         db=DATABASE,
