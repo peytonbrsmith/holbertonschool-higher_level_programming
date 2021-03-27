@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     cur.execute("SELECT * FROM states \
                 WHERE name='{}'\
-                ORDER BY id".format(ARG))
+                ORDER BY id ASC".format(ARG))
     rows = cur.fetchall()
     for row in rows:
         print(row)
