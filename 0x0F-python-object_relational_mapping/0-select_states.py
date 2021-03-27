@@ -1,26 +1,29 @@
 #!/usr/bin/python3
-"""Select states
+"""
+Select states
 """
 import MySQLdb
 import sys
 
-USER = sys.argv[1]
-PASS = sys.argv[2]
-DATABASE = sys.argv[3]
 
-db = MySQLdb.connect(
-    host="localhost",
-    user=USER,
-    passwd=PASS,
-    db=DATABASE,
-    port=3306)
+if __name__ == "__main__":
+    USER = sys.argv[1]
+    PASS = sys.argv[2]
+    DATABASE = sys.argv[3]
 
-cur = db.cursor()
+    db = MySQLdb.connect(
+        host="127.0.0.1",
+        user=USER,
+        passwd=PASS,
+        db=DATABASE,
+        port=3306)
 
-cur.execute("SELECT * FROM states ORDER BY states.id")
-rows = cur.fetchall()
-for row in rows:
-    print(row)
+    cur = db.cursor()
 
-cur.close()
-db.close()
+    cur.execute("SELECT * FROM states ORDER BY states.id")
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+
+    cur.close()
+    db.close()

@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-if __name__ == '__main__':
-    import MySQLdb
-    import sys
+"""
+2
+"""
+import MySQLdb
+import sys
 
+
+if __name__ == '__main__':
     USER = sys.argv[1]
     PASS = sys.argv[2]
     DATABASE = sys.argv[3]
