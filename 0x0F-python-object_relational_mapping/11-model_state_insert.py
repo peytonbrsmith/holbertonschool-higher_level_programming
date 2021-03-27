@@ -2,19 +2,20 @@
 """
 11
 """
-import sys
-from model_state import Base, State
+if __name__ == "__main__":
+    import sys
+    from model_state import Base, State
 
-from sqlalchemy import (create_engine)
-from sqlalchemy.orm import Session
+    from sqlalchemy import (create_engine)
+    from sqlalchemy.orm import Session
 
-engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-    sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
-Base.metadata.create_all(engine)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
+    Base.metadata.create_all(engine)
 
-session = Session(engine)
-lousiana = State(name='Louisiana', id=6)
-session.add(lousiana)
-session.commit()
-print("{}".format(lousiana.id))
-session.close()
+    session = Session(engine)
+    lousiana = State(name='Louisiana', id=6)
+    session.add(lousiana)
+    session.commit()
+    print("{}".format(lousiana.id))
+    session.close()
