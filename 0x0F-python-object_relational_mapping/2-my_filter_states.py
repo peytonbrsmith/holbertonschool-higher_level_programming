@@ -23,6 +23,7 @@ if __name__ == '__main__':
 
     cur.execute("SELECT * FROM states \
                 WHERE name='{}'\
+                COLLATE Latin1_General_CS\
                 ORDER BY id ASC".format(ARG))
     rows = cur.fetchall()
     for row in rows:
