@@ -29,4 +29,3 @@ if __name__ == "__main__":
     sesh.commit()
 
     sesh.close()
-©
