@@ -21,4 +21,3 @@ def find_peak(list_of_integers):
             return (lst[idx])
         elif lst.count(lst[idx]) == len(lst):
             return (lst[idx])
-        print("x")
