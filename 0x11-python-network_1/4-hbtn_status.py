@@ -3,10 +3,9 @@
 status of https://intranet.hbtn.io/status
 """
 if __name__ == "__main__":
-    from urllib import request
+    import requests
 
-    with request.urlopen('https://intranet.hbtn.io/status') as response:
-        this = response.read().decode("utf-8")
-        print("Body response:")
-        print("\t- type:", type(this))
-        print("\t- content:", this)
+    req = requests.get("https://intranet.hbtn.io/status")
+    print("Body response:")
+    print("\t- type:", req.text.__class__)
+    print("\t- content:", req.text)
