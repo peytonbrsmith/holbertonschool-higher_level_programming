@@ -6,7 +6,7 @@ if __name__ == "__main__":
     import sys
     import requests
 
-    url = "http://761cd13fb8de.3b3b042d.hbtn-cod.io:5000/search_user"
+    url = "http://0.0.0.0:5000/search_user"
 
     try:
         qval = sys.argv[1]
