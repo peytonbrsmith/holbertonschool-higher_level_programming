@@ -16,4 +16,4 @@ if __name__ == "__main__":
             print(this.decode("utf-8"))
     except error.HTTPError as e:
         error = ''.join((item for item in str(e) if item.isdigit()))
-        print("Error Code:", error)
+        print("Error code:", error)
