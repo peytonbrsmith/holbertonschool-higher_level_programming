@@ -10,17 +10,16 @@ if __name__ == "__main__":
 
     try:
         qval = sys.argv[1]
-    except:
+    except IndexError:
         qval = ""
 
     data = {"q": qval}
     req = requests.post(url, data)
     try:
         json = req.json()
-        if (type(json)):
-            if json:
-                print("[{}] {}".format(json.get("id"), json.get("name")))
-            else:
-                print("No result")
+        if json:
+            print("[{}] {}".format(json.get("id"), json.get("name")))
+        else:
+            print("No result")
     except (ValueError, simplejson.JSONDecodeError):
         print("Not a valid JSON")
