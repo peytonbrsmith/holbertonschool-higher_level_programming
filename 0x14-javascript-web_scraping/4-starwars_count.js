@@ -12,7 +12,7 @@ request(host, function (err, res, body) {
   let occ = 0;
   for (const film of JSON.parse(body).results) {
     for (const character of film.characters) {
-      if (parseInt(character.slice(37, 39)) === 18) {
+      if (character.includes('18')) {
         occ = occ + 1;
       }
     }
